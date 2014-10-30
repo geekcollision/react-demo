@@ -1,12 +1,16 @@
 /** @jsx React.DOM */
 
-var React = require('react'),
-    B = require('./b');
+var React = require('react/addons');
+
+var B = require('./b');
+
 
 var A = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
   getInitialState: function () {
     return {
-      number: Math.round(Math.random() * 100)
+      number: Math.round(Math.random() * 100),
+      offset: 0
     };
   },
 
@@ -21,13 +25,13 @@ var A = React.createClass({
 
   incrementNumber: function () {
     this.setState({
-      number: this.state.number + 1
+      number: this.state.number + parseInt(this.state.offset, 10)
     });
   },
 
   decrementNumber: function () {
     this.setState({
-      number: this.state.number - 1
+      number: this.state.number - parseInt(this.state.offset, 10)
     })
   },
 
@@ -52,6 +56,7 @@ var A = React.createClass({
         <input type='text' value={this.state.number} readOnly />
         <button onClick={this.incrementNumber}>Increment by one</button>
         <button onClick={this.decrementNumber}>Decrement by one</button>
+        <input type='text' valueLink={this.linkState('offset')} />
       </div>
     );
   }
