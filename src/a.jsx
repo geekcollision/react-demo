@@ -49,7 +49,7 @@ var A = React.createClass({
   renderStuff: function () {
     return (
       <div>
-        <input type='text' value={this.state.number} />
+        <input type='text' value={this.state.number} readOnly />
         <button onClick={this.incrementNumber}>Increment by one</button>
         <button onClick={this.decrementNumber}>Decrement by one</button>
       </div>
