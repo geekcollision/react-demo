@@ -25,6 +25,12 @@ var A = React.createClass({
     });
   },
 
+  decrementNumber: function () {
+    this.setState({
+      number: this.state.number - 1
+    })
+  },
+
   render: function() {
     return (
       <div>
@@ -35,6 +41,7 @@ var A = React.createClass({
 
         <p>This should also work for children:</p>
         <B />
+        <B />
       </div>
     );
   },
@@ -44,6 +51,7 @@ var A = React.createClass({
       <div>
         <input type='text' value={this.state.number} />
         <button onClick={this.incrementNumber}>Increment by one</button>
+        <button onClick={this.decrementNumber}>Decrement by one</button>
       </div>
     );
   }
