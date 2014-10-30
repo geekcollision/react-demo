@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 
 var React = require('react/addons');
+//var d3 = require('d3');
 
 var B = require('./b');
 
