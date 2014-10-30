@@ -17,7 +17,9 @@ state (internal! access through this.state, this.setState to mutate)
 vs.
 properties (html attrs! access through this.props)
 
+```js
 var oboe = require('oboe');
+```
 
 * getInitialState, getDefaultProps
 * componentDidMount
@@ -30,6 +32,7 @@ var oboe = require('oboe');
 
 http://oboejs.com/
 
+```js
 oboe('http://localhost:3000/api/resource/exchange/jsoncsv')
    .node('*', function(arr) {
         if(Array.isArray(arr) && Array.isArray(arr[0])) {
@@ -56,7 +59,9 @@ oboe('http://localhost:3000/api/resource/exchange/jsoncsv')
             ...
         }
    });
+```
 
 ## D3
 
-http://square.github.io/intro-to-d3/
+* http://square.github.io/intro-to-d3/
+* http://10consulting.com/2014/02/19/d3-plus-reactjs-for-charting/
